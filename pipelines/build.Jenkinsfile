@@ -14,7 +14,7 @@ pipeline {
                     # your pipeline commands here....
 
                     # for example list the files in the pipeline workdir
-                    ls
+                    #ls
 
                     # build an image
                     docker build -t netflix-front .
