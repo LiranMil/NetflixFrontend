@@ -1,6 +1,6 @@
 pipeline {
     agent any
-#
+
     triggers {
         githubPush()   // trigger the pipeline upon push event in github
     }
@@ -36,8 +36,8 @@ pipeline {
                 sh '''
                   IMAGE_FULL_NAME=$DOCKER_USERNAME/$IMAGE_BASE_NAME:$IMAGE_TAG
 
-                  docker build --push -t $IMAGE_FULL_NAME .
-                  docker push --push $IMAGE_FULL_NAME
+                  docker build -t $IMAGE_FULL_NAME .
+                  docker push $IMAGE_FULL_NAME
                 '''
             }
         }
